@@ -1,0 +1,23 @@
+{
+  "name": "react_practice_calculator",
+  "version": "1.0.0",
+  "description": "Based on this repository: https://github.com/nishina555/redux-calculator",
+  "main": "index.js",
+  "scripts": {
+    "create-react-app": "create-react-app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reidha/react_practice_calculator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reidha/react_practice_calculator/issues"
+  },
+  "homepage": "https://github.com/reidha/react_practice_calculator#readme",
+  "dependencies": {
+    "create-react-app": "^3.4.1"
+  }
+}
