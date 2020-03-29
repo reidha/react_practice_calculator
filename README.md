@@ -1,3 +1,5 @@
-# react_practice_calculator
+# calculator
+https://github.com/nishina555/redux-calculator
 
-Based on this repository: https://github.com/nishina555/redux-calculator
+# to-do
+https://webkikaku.co.jp/homepage/blog/hpseisaku/javascript/react-start/
