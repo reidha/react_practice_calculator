@@ -3,8 +3,20 @@ import { actionTypes } from '../utils/actionTypes';
 const initialAppState = {
     inputValue: 0,
     resultValue: 0,
-    showingResult: false
+    showingResult: false,
+    previousOperator: actionTypes.PLUS
 };
+
+const calcWithPrevOperator = (previousOperator, resultValue, inputValue) => {
+    switch (previousOperator) {
+        case actionTypes.PLUS:
+            return resultValue + inputValue;
+        case actionTypes.MINUS:
+            return resultValue - inputValue;
+        default:
+            return null;
+    }
+}
 
 const calculator = (state = initialAppState, action) => {
     console.log('calculator');
@@ -18,15 +30,17 @@ const calculator = (state = initialAppState, action) => {
         return {
             ...state,
             inputValue: 0,
-            resultValue: state.resultValue + state.inputValue,
-            showingResult: true
+            resultValue: calcWithPrevOperator(state.previousOperator, state.resultValue, state.inputValue),
+            showingResult: true,
+            previousOperator: action.type
         };
     } else if (action.type === actionTypes.MINUS) {
         return {
             ...state,
             inputValue: 0,
-            resultValue: state.resultValue ?  state.resultValue - state.inputValue : state.inputValue,
-            showingResult: true
+            resultValue: calcWithPrevOperator(state.previousOperator, state.resultValue, state.inputValue),
+            showingResult: true,
+            previousOperator: action.type
         }
     } else {
         return state;
